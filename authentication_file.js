@@ -5,7 +5,7 @@ var datamodel = require('./datamodel');
 
 //========= Validation ================
 function itIsPhonenumber(inputtxt) {
-  var phoneno = /^\+?([0-9]{2})\(?([0-9]{3})\)?([0-9]{3})?[-. ]?([0-9]{2})?[-. ]?([0-9]{2})$/;
+  var phoneno = /^\+?([0-9]{2})?[ .]\(?([0-9]{3})\)?[ .]?([0-9]{3})?[-. ]?([0-9]{2})?[-. ]?([0-9]{2})$/;
   if(inputtxt.match(phoneno)) {
     return true;
   }  
@@ -75,8 +75,7 @@ exports.getUserById = function(req,res){
 }
 
 
-
-
+//checkAccess
 exports.checkToken = function (req, res, next) {
 
 

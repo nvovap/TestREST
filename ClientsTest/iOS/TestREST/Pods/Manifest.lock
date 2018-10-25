@@ -1,16 +1,24 @@
 PODS:
   - Alamofire (4.7.3)
+  - SVProgressHUD (2.2.5)
+  - SwiftPhoneNumberFormatter (1.4)
 
 DEPENDENCIES:
   - Alamofire
+  - SVProgressHUD
+  - SwiftPhoneNumberFormatter
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - SVProgressHUD
+    - SwiftPhoneNumberFormatter
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SwiftPhoneNumberFormatter: 089f2a71dd7be621e0045b01c689cd38eac0ce58
 
-PODFILE CHECKSUM: a79b486e2a8aea22d5785ad3590925e564b58834
+PODFILE CHECKSUM: 855bb46cd3f544b967a7c5ee7e5cc9dd75080e20
 
 COCOAPODS: 1.5.3

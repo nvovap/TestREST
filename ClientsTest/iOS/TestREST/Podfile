@@ -6,5 +6,8 @@ target 'TestREST' do
   use_frameworks!
 
   pod 'Alamofire'
+  pod "SwiftPhoneNumberFormatter"
+  pod "SVProgressHUD"
+  
 
 end

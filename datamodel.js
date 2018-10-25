@@ -9,7 +9,7 @@ const sequelize = new Sequelize('portfolio', process.env.USERPOSTGRES || 'user',
   host: process.env.HOSTPOSTGRES || 'localhost',
   dialect: 'postgres',
   dialectOptions: {
-    ssl: false
+    ssl: true
   },
   port: process.env.PORTPOSTGRES || 5432
 
@@ -197,7 +197,7 @@ exports.findUser = function (email, password, callback) {
 		var err = null;
 		if (user == null) {
 			err = 'email'
-		} else {
+		} else { //checkPassword
 
        var hashpasswordNew = crypto.createHash('sha512')
                    .update(user.salt + password, 'utf8')

@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SVProgressHUD
 
 
 
@@ -31,6 +32,13 @@ class ItemsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        reloadData()
+        
+    }
+    
+    
+    
+    func reloadData()  {
         guard let token = app.token else {
             return
         }
@@ -44,13 +52,18 @@ class ItemsTableViewController: UITableViewController {
         ]
         
         let headers = HTTPHeaders(dictionaryLiteral: ("authorization", token))
-
-        request("http://10.0.1.5:3000/api/item", parameters: params, headers: headers).validate().responseJSON { responseJSON in
+        
+        
+        SVProgressHUD.show()
+        
+        request(app.host + "api/item", parameters: params, headers: headers).validate().responseJSON { responseJSON in
+            
+            self.items.removeAll()
             
             switch responseJSON.result {
             case .success(let value):
                 guard let jsonArray = value as? Array<[String: Any]> else { return }
-
+                
                 for jsonObject in jsonArray {
                     guard
                         let id = jsonObject["id"] as? Int,
@@ -67,9 +80,9 @@ class ItemsTableViewController: UITableViewController {
                     if imagePath != "" {
                         let url = URL(string: imagePath)
                         if let data = try? Data(contentsOf: url!) {
-                           item.image = UIImage(data: data)
+                            item.image = UIImage(data: data)
                         }
-                       
+                        
                     }
                     
                     self.items.append(item)
@@ -80,8 +93,21 @@ class ItemsTableViewController: UITableViewController {
             case .failure(let error):
                 print(error)
             }
+            
+            SVProgressHUD.dismiss()
+            
         }
-        
+    }
+    
+    @IBAction func onClickLogOut(_ sender: Any) {
+        app.token = nil
+        UserDefaults.standard.set(nil, forKey: "token")
+        app.router.setupStartScreen()
+    }
+    
+    
+    @IBAction func exitAddItem(_ segue: UIStoryboardSegue) {
+        reloadData()
     }
     
    
@@ -127,7 +153,7 @@ class ItemsTableViewController: UITableViewController {
             
             let headers = HTTPHeaders(dictionaryLiteral: ("authorization", token))
             
-            request("http://10.0.1.5:3000/api/item/\(idItem)", method: .delete, parameters: nil, headers: headers)
+            request(app.host + "api/item/\(idItem)", method: .delete, parameters: nil, headers: headers)
             
             items.remove(at: indexPath.row)
                 

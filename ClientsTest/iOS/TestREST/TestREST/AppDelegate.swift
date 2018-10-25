@@ -13,10 +13,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var token: String? = nil
+    var router: Router!
 
+    let host = "http://10.10.1.56:3000/"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        token = UserDefaults.standard.string(forKey: "token")
+        
+        router = Router(window: window!)
+        router.setupStartScreen()
+        
         return true
     }
 

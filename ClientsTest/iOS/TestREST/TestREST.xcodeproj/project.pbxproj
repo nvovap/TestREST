@@ -7,26 +7,50 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		322F633D2181A52C002BC292 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322F633C2181A52C002BC292 /* SignUpViewController.swift */; };
 		329A3C0B2179D47D00D4929D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329A3C0A2179D47D00D4929D /* AppDelegate.swift */; };
-		329A3C0D2179D47D00D4929D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329A3C0C2179D47D00D4929D /* ViewController.swift */; };
+		329A3C0D2179D47D00D4929D /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329A3C0C2179D47D00D4929D /* SignInViewController.swift */; };
 		329A3C102179D47D00D4929D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 329A3C0E2179D47D00D4929D /* Main.storyboard */; };
 		329A3C122179D48000D4929D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 329A3C112179D48000D4929D /* Assets.xcassets */; };
 		329A3C152179D48000D4929D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 329A3C132179D48000D4929D /* LaunchScreen.storyboard */; };
 		329A3C1D2179FEEB00D4929D /* ItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329A3C1C2179FEEB00D4929D /* ItemsTableViewController.swift */; };
 		329A3C1F217A0DF700D4929D /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329A3C1E217A0DF700D4929D /* ItemTableViewCell.swift */; };
+		32D716AC2181AE250067DAC4 /* NameValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D716A42181AE250067DAC4 /* NameValidator.swift */; };
+		32D716AD2181AE250067DAC4 /* EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D716A52181AE250067DAC4 /* EmailValidator.swift */; };
+		32D716AE2181AE250067DAC4 /* ValidationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D716A62181AE250067DAC4 /* ValidationProtocol.swift */; };
+		32D716AF2181AE250067DAC4 /* ExpireMonthValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D716A72181AE250067DAC4 /* ExpireMonthValidator.swift */; };
+		32D716B02181AE250067DAC4 /* CVVValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D716A82181AE250067DAC4 /* CVVValidator.swift */; };
+		32D716B12181AE250067DAC4 /* PhoneValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D716A92181AE250067DAC4 /* PhoneValidator.swift */; };
+		32D716B22181AE250067DAC4 /* ExpireYearValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D716AA2181AE250067DAC4 /* ExpireYearValidator.swift */; };
+		32D716B32181AE250067DAC4 /* CCNValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D716AB2181AE250067DAC4 /* CCNValidator.swift */; };
+		32D716B72181AF230067DAC4 /* MyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D716B62181AF230067DAC4 /* MyTextField.swift */; };
+		32D716B92181D6E70067DAC4 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D716B82181D6E70067DAC4 /* Router.swift */; };
+		32D716BB2181E8F80067DAC4 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D716BA2181E8F80067DAC4 /* AddItemViewController.swift */; };
 		AE38AE9CC4EC43E9EE60E3E3 /* Pods_TestREST.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D65BA853A8C1A0526B81B9BC /* Pods_TestREST.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		322F633C2181A52C002BC292 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		329A3C072179D47D00D4929D /* TestREST.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestREST.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		329A3C0A2179D47D00D4929D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		329A3C0C2179D47D00D4929D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		329A3C0C2179D47D00D4929D /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		329A3C0F2179D47D00D4929D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		329A3C112179D48000D4929D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		329A3C142179D48000D4929D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		329A3C162179D48000D4929D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		329A3C1C2179FEEB00D4929D /* ItemsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsTableViewController.swift; sourceTree = "<group>"; };
 		329A3C1E217A0DF700D4929D /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
+		32D716A42181AE250067DAC4 /* NameValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameValidator.swift; sourceTree = "<group>"; };
+		32D716A52181AE250067DAC4 /* EmailValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
+		32D716A62181AE250067DAC4 /* ValidationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationProtocol.swift; sourceTree = "<group>"; };
+		32D716A72181AE250067DAC4 /* ExpireMonthValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpireMonthValidator.swift; sourceTree = "<group>"; };
+		32D716A82181AE250067DAC4 /* CVVValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVVValidator.swift; sourceTree = "<group>"; };
+		32D716A92181AE250067DAC4 /* PhoneValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneValidator.swift; sourceTree = "<group>"; };
+		32D716AA2181AE250067DAC4 /* ExpireYearValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpireYearValidator.swift; sourceTree = "<group>"; };
+		32D716AB2181AE250067DAC4 /* CCNValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCNValidator.swift; sourceTree = "<group>"; };
+		32D716B62181AF230067DAC4 /* MyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTextField.swift; sourceTree = "<group>"; };
+		32D716B82181D6E70067DAC4 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		32D716BA2181E8F80067DAC4 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		A299BA964FD72C7E6827DF45 /* Pods-TestREST.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestREST.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestREST/Pods-TestREST.debug.xcconfig"; sourceTree = "<group>"; };
 		D65BA853A8C1A0526B81B9BC /* Pods_TestREST.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestREST.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD7A844791921B12BEDA971C /* Pods-TestREST.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestREST.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestREST/Pods-TestREST.release.xcconfig"; sourceTree = "<group>"; };
@@ -73,9 +97,12 @@
 		329A3C092179D47D00D4929D /* TestREST */ = {
 			isa = PBXGroup;
 			children = (
+				32D716B42181AEE20067DAC4 /* Utils */,
 				329A3C0A2179D47D00D4929D /* AppDelegate.swift */,
-				329A3C0C2179D47D00D4929D /* ViewController.swift */,
+				322F633C2181A52C002BC292 /* SignUpViewController.swift */,
+				329A3C0C2179D47D00D4929D /* SignInViewController.swift */,
 				329A3C0E2179D47D00D4929D /* Main.storyboard */,
+				32D716BA2181E8F80067DAC4 /* AddItemViewController.swift */,
 				329A3C1E217A0DF700D4929D /* ItemTableViewCell.swift */,
 				329A3C1C2179FEEB00D4929D /* ItemsTableViewController.swift */,
 				329A3C112179D48000D4929D /* Assets.xcassets */,
@@ -83,6 +110,39 @@
 				329A3C162179D48000D4929D /* Info.plist */,
 			);
 			path = TestREST;
+			sourceTree = "<group>";
+		};
+		32D716A32181AE250067DAC4 /* Validators */ = {
+			isa = PBXGroup;
+			children = (
+				32D716A42181AE250067DAC4 /* NameValidator.swift */,
+				32D716A52181AE250067DAC4 /* EmailValidator.swift */,
+				32D716A62181AE250067DAC4 /* ValidationProtocol.swift */,
+				32D716A72181AE250067DAC4 /* ExpireMonthValidator.swift */,
+				32D716A82181AE250067DAC4 /* CVVValidator.swift */,
+				32D716A92181AE250067DAC4 /* PhoneValidator.swift */,
+				32D716AA2181AE250067DAC4 /* ExpireYearValidator.swift */,
+				32D716AB2181AE250067DAC4 /* CCNValidator.swift */,
+			);
+			path = Validators;
+			sourceTree = "<group>";
+		};
+		32D716B42181AEE20067DAC4 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				32D716B82181D6E70067DAC4 /* Router.swift */,
+				32D716B52181AF000067DAC4 /* Extensions */,
+				32D716A32181AE250067DAC4 /* Validators */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		32D716B52181AF000067DAC4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				32D716B62181AF230067DAC4 /* MyTextField.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		6B5E92D549CDFFAED5579DF8 /* Pods */ = {
@@ -189,10 +249,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-TestREST/Pods-TestREST-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftPhoneNumberFormatter/SwiftPhoneNumberFormatter.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftPhoneNumberFormatter.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -206,10 +270,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32D716AE2181AE250067DAC4 /* ValidationProtocol.swift in Sources */,
+				32D716B72181AF230067DAC4 /* MyTextField.swift in Sources */,
 				329A3C1F217A0DF700D4929D /* ItemTableViewCell.swift in Sources */,
-				329A3C0D2179D47D00D4929D /* ViewController.swift in Sources */,
+				32D716AD2181AE250067DAC4 /* EmailValidator.swift in Sources */,
+				329A3C0D2179D47D00D4929D /* SignInViewController.swift in Sources */,
 				329A3C0B2179D47D00D4929D /* AppDelegate.swift in Sources */,
+				32D716AC2181AE250067DAC4 /* NameValidator.swift in Sources */,
+				32D716B92181D6E70067DAC4 /* Router.swift in Sources */,
+				32D716B12181AE250067DAC4 /* PhoneValidator.swift in Sources */,
+				32D716B02181AE250067DAC4 /* CVVValidator.swift in Sources */,
+				32D716B32181AE250067DAC4 /* CCNValidator.swift in Sources */,
+				32D716B22181AE250067DAC4 /* ExpireYearValidator.swift in Sources */,
+				32D716AF2181AE250067DAC4 /* ExpireMonthValidator.swift in Sources */,
+				32D716BB2181E8F80067DAC4 /* AddItemViewController.swift in Sources */,
 				329A3C1D2179FEEB00D4929D /* ItemsTableViewController.swift in Sources */,
+				322F633D2181A52C002BC292 /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

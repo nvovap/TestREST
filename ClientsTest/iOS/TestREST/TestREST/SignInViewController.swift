@@ -8,13 +8,14 @@
 
 import UIKit
 import Alamofire
+import SVProgressHUD
 
-class ViewController: UIViewController {
+class SignInViewController: UIViewController {
 
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     
-    
+    let app =  (UIApplication.shared.delegate as! AppDelegate)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,20 +23,27 @@ class ViewController: UIViewController {
 
     @IBAction func onClickLogin(_ sender: UIButton) {
         
+        
+        guard validate() else {
+            return
+        }
+        
         let params: [String: Any] = [
             "email": email.text!,
             "password": password.text!,
         ]
         
-    
+        SVProgressHUD.show()
         
-        request("http://10.0.1.5:3000/api/login", method: .post, parameters: params).validate().responseJSON { responseJSON in
+        request(app.host + "api/login", method: .post, parameters: params).validate().responseJSON { responseJSON in
             
             switch responseJSON.result {
             case .success(let value):
                 if let jsonObject = value as? [String: Any] {
                     let app =  (UIApplication.shared.delegate as! AppDelegate)
                     app.token = jsonObject["token"] as? String
+                    
+                    UserDefaults.standard.set(app.token, forKey: "token")
                     
                     self.performSegue(withIdentifier: "loginOk", sender: self)
                     
@@ -44,9 +52,25 @@ class ViewController: UIViewController {
                 print(error)
             }
             
+            
+            SVProgressHUD.dismiss()
         }
         
         
+    }
+    
+    
+    // MARK: - Validation
+    
+    func validate() -> Bool {
+      
+        if email.text!.isEmpty || !EmailValidator().isValid(object: email.text) {
+            email.shake()
+            return false
+        }
+        
+        
+        return true
     }
     
 }
