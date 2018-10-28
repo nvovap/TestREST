@@ -2,6 +2,8 @@ var express = require('express')
 var app = express() 
 var busboy = require('connect-busboy')
 
+let config = require('config'); // загружаем адрес базы из конфигов
+
 
 require('dotenv').config();
 
@@ -9,7 +11,10 @@ require('dotenv').config();
 console.log(process.env.HOSTNAME);
 
 
-
+if(config.util.getEnv('NODE_ENV') !== 'test') {
+    //morgan для вывода логов в консоль
+    //app.use(morgan('combined')); //'combined' выводит логи в стиле apache
+}
 
 //Setup parser file from POST request
 app.use(busboy());
@@ -67,3 +72,5 @@ app.get('/api/item?', items_file.getItems);
 
 
 app.listen(process.env.PORT || 3000);
+
+module.exports = app; // для тестирования

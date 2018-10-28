@@ -9,7 +9,7 @@ const sequelize = new Sequelize('portfolio', process.env.USERPOSTGRES || 'user',
   host: process.env.HOSTPOSTGRES || 'localhost',
   dialect: 'postgres',
   dialectOptions: {
-    ssl: true
+    ssl: false
   },
   port: process.env.PORTPOSTGRES || 5432
 
