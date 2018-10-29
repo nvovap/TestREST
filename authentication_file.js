@@ -98,6 +98,11 @@ exports.register = function(req,res){
   var password = "";
   var phone    = ""; 
 
+  if (req.busboy == nil) {
+    res.status(423).send(''); 
+    return;
+  }
+
   req.pipe(req.busboy);
 
   req.busboy.on('field', function(fieldname, val, fieldnameTruncated, valTruncated, encoding, mimetype) {

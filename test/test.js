@@ -5,8 +5,8 @@ process.env.NODE_ENV = 'test';
 //Подключаем dev-dependencies
 let chai = require('chai');
 let chaiHttp = require('chai-http');
-let server = require('../index');
-let should = chai.should();
+//let server = require('../index');
+//let should = chai.should();
 
 chai.use(chaiHttp);
 //Наш основной блок
@@ -31,37 +31,71 @@ describe('Books', () => {
 
 
 
-describe('/GET me', () => {
-  it('it should GET error information about user', (done) => {
-    chai.request(server)
-      .get('/api/me')
-      .set('token', '1345054201052')
-      .end((err, res) => {
-        res.should.have.status(400);
-        console.log(res)
-        done();
-      });
-  });
-});
+// describe('/GET me', () => {
+//   it('it should GET error information about user', (done) => {
+//     chai.request(server)
+//       .get('/api/me')
+//       .set('token', '1345054201052')
+//       .end((err, res) => {
+//         res.should.have.status(400);
+//         console.log(res)
+//         done();
+//       });
+//   });
+// });
 
 
  
 
 
 
- // describe('/POST login', () => {
+describe('/POST login', () => {
+  it('it should login user nvovap@gmail.com', (done) => {
+    
+    // let user = {
+    //   email: "nvovap@gmail.com",
+    //   password: "123"
+    // }
+
+    chai.request('http://10.10.1.56:3000')
+      .post('/api/login')
+      .set('content-type', 'application/x-www-form-urlencoded; charset=UTF-8')
+      .set('connection', 'keep-alive')
+//      .set('accept', '*/*')
+//      .expect("Content-type",/json/)
+      .send({ email: "nvovap2@gmail.com", password: "123"})
+      .end((err, res) => {
+ //       console.log(res.should.have.status)
+
+ //         res.should.have.status(200);
+          done();
+      });
+  });
+});
 
 
- //  it('it should login user nvovap@gmail.com', (done) => {
- //    chai.request(server)
- //      .post('/api/login')
- //      .send({ email: "nvovap@gmail.com", password: "123"})
- //      .end((err, res) => {
 
- //      });
- //  });
-//});
 
+
+//   describe('/POST book', () => {
+//       it('it should not POST a book without pages field', (done) => {
+//         let book = {
+//             title: "The Lord of the Rings",
+//             author: "J.R.R. Tolkien",
+//             year: 1954
+//         }
+//         chai.request(server)
+//             .post('/book')
+//             .send(book)
+//             .end((err, res) => {
+//                 res.should.have.status(200);
+//                 res.body.should.be.a('object');
+//                 res.body.should.have.property('errors');
+//                 res.body.errors.should.have.property('pages');
+//                 res.body.errors.pages.should.have.property('kind').eql('required');
+//               done();
+//             });
+//       });
 
 // describe('/POST login', () => {
 
