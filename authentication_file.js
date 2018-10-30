@@ -5,7 +5,7 @@ var datamodel = require('./datamodel');
 
 //========= Validation ================
 function itIsPhonenumber(inputtxt) {
-  var phoneno = /^\+?([0-9]{2})?[ .]\(?([0-9]{3})\)?[ .]?([0-9]{3})?[-. ]?([0-9]{2})?[-. ]?([0-9]{2})$/;
+  var phoneno = /^\+?([0-9]{2})\(?([0-9]{3})\)?([0-9]{3})?[-. ]?([0-9]{2})?[-. ]?([0-9]{2})$/;
   if(inputtxt.match(phoneno)) {
     return true;
   }  
@@ -98,10 +98,10 @@ exports.register = function(req,res){
   var password = "";
   var phone    = ""; 
 
-  if (req.busboy == nil) {
-    res.status(423).send(''); 
-    return;
-  }
+  // if (req.busboy == nil) {
+  //   res.status(423).send(''); 
+  //   return;
+  // }
 
   req.pipe(req.busboy);
 
