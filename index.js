@@ -20,6 +20,8 @@ if(config.util.getEnv('NODE_ENV') !== 'test') {
 app.use(busboy());
 app.use(busboy({ immediate: true }));
 
+
+console.log(__dirname)
 app.use(express.static(__dirname+'/public')); //it is DIR for content
 
 //Cross-Origin Resource Sharing 
