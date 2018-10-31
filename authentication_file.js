@@ -107,7 +107,6 @@ exports.register = function(req,res){
 
   req.busboy.on('field', function(fieldname, val, fieldnameTruncated, valTruncated, encoding, mimetype) {
     
-    console.log('Field ON');
 
     val  = val.replace( "\r\n", "" );
     
@@ -162,7 +161,6 @@ exports.meUpdate = function(req,res){
 
   req.busboy.on('field', function(fieldname, val, fieldnameTruncated, valTruncated, encoding, mimetype) {
     
-    console.log('Field ON');
 
     val  = val.replace( "\r\n", "" );
     
@@ -214,7 +212,6 @@ exports.login = function(req,res){
 
   req.busboy.on('field', function(fieldname, val, fieldnameTruncated, valTruncated, encoding, mimetype) {
     
-    console.log('Field ON');
 
     val  = val.replace( "\r\n", "" );
     

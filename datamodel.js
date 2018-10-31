@@ -11,7 +11,8 @@ const sequelize = new Sequelize('portfolio', process.env.USERPOSTGRES || 'user',
   dialectOptions: {
     ssl: true
   },
-  port: process.env.PORTPOSTGRES || 5432
+  port: process.env.PORTPOSTGRES || 5432,
+  logging: false
 
 });
 
@@ -310,7 +311,14 @@ exports.updateUser = function (token, name, email, password, phone, callback) {
      
       if (name != '')     user.name      = name;
       if (email != '')    user.email     = email;
-      user.password  = password;
+
+      var salt = Math.round((Date.now() * Math.random())) + '';
+      var hashpassword = crypto.createHash('sha512')
+                   .update(salt + password, 'utf8')
+                   .digest('hex');
+
+      user.salt = salt;
+      user.password  = hashpassword;
       if (phone != '')    user.phone     = phone;
 
       user.save();

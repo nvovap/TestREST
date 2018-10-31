@@ -26,7 +26,6 @@ exports.createItem = function(req,res){
 
   req.busboy.on('field', function(fieldname, val, fieldnameTruncated, valTruncated, encoding, mimetype) {
     
-    console.log('Field ON');
 
     val  = val.replace( "\r\n", "" );
     
@@ -70,7 +69,6 @@ exports.updateItem = function(req,res){
 
   req.busboy.on('field', function(fieldname, val, fieldnameTruncated, valTruncated, encoding, mimetype) {
     
-    console.log('Field ON');
 
     val  = val.replace( "\r\n", "" );
     
@@ -137,13 +135,7 @@ exports.uploadItemImage = function(req, res){
 
       file.pipe(stream);
 
-      console.log("END busboy file");
-
       stream.on('close', function(){
-        console.log('Upload finishid ');
-        //res.send('ok');
-
-      
 
         fs.exists(dir + "/" +filename, function(exists){
             if (exists){
