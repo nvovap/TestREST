@@ -2,8 +2,15 @@ require('dotenv').config();
 
 var fs = require('fs')
 
-fs.mkdirSync('public');
-fs.mkdirSync('public/img');
+
+if (!fs.existsSync('public')){
+  fs.mkdirSync('public');
+}
+
+
+if (!fs.existsSync('public/img')){
+  fs.mkdirSync('public/img');
+}
 
 
 var pg = require('pg')
@@ -13,7 +20,7 @@ var config = {
   user: process.env.USERPOSTGRES || 'user',
   password: process.env.PSWPOSTGRES || '123',
   host: process.env.HOSTPOSTGRES || 'localhost',
-  database: "portfolio",
+  database: "postgres",
   idleTimeoutMillis: 10000000, // close idle clients after 1 second
   connectionTimeoutMillis: 10000000, // return an error after 1 second if connection could not be established
   ssl: true,
