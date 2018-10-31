@@ -8,14 +8,14 @@ var pg = require('pg')
 
 
 var config = {
-  user: "postgres",
-  password: "123",
-  host: "10.10.1.243",
-  database: "map_new_york",
+  user: process.env.USERPOSTGRES || 'user',
+  password: process.env.PSWPOSTGRES || '123',
+  host: process.env.HOSTPOSTGRES || 'localhost',
+  database: "portfolio",
   idleTimeoutMillis: 10000000, // close idle clients after 1 second
   connectionTimeoutMillis: 10000000, // return an error after 1 second if connection could not be established
   ssl: true,
-  port: 5432
+  port: process.env.PORTPOSTGRES || 5432
 };
 
 
