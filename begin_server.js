@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 var fs = require('fs')
 
 fs.mkdirSync('public');
